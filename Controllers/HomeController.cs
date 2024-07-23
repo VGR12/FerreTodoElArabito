@@ -15,6 +15,7 @@ namespace FerreTodoElArabito.Web.Controllers
 
         public IActionResult Index()
         {
+            string prueba = "";
             return View();
         }
 
