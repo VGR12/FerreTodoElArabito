@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FT.Lib.Data\FT.Lib.Data.csproj" />
+  </ItemGroup>
+
 </Project>
