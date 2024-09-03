@@ -6,19 +6,37 @@
 }
 
 
-<div class="container">
+<div class="container col-12">
 
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                    <img src="/assets/img/NewIcono.png.png" style="width:500px;margin-bottom: -30px;margin-left: -20px;">
 
                     <div class="d-flex justify-content-center py-4">
-                        <a href="index.html" class="logo d-flex align-items-center w-auto">
-                            <img src="assets/img/logo.png" alt="">
-                            <span class="d-none d-lg-block">¡Bienvenido!</span>
-                        </a>
-                    </div><!-- End Logo -->
+                        <div>
+                            <a class="logo d-flex align-items-center w-auto">
+                    @* <img src="/assets/img/NewIcono.png.png" style="width:105px;"> *@
+
+                                <span class="d-none d-lg-block">¡Bienvenido!</span>
+                            </a>
+                        </div> 
+                    </div> 
+
+                   @*  <div class="col-12 mb-3">
+                        <div class="row">
+                            <div class="col-6 mr-2">
+                                <img src="/assets/img/just-iconE.png" style="width:105px;">
+                            </div>
+                            <div class="col-6">
+                                <a class="logo d-flex align-items-center w-auto">
+                                    <span class="d-none d-lg-block">¡Bienvenido!</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div> *@
 
                     <div class="card mb-3">
 
@@ -43,8 +61,8 @@
                                 </div>
 
                                 <div class="col-12 mt-2">
-                                    @Html.LabelFor(t => t.Password, "Contraseña:", new { @class = "form-label" })
-                                    @Html.TextBoxFor(t => t.Password, new { @class = "form-control"})
+                                    @Html.LabelFor(t => t.Password, "Contraseña:", new { @class = "form-label password"})
+                                    @Html.TextBoxFor(t => t.Password, new { @class = "form-control", type = "password" })
                                     @Html.ValidationMessageFor(t => t.Password)
                                 </div>
 
