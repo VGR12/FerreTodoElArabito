@@ -12,7 +12,15 @@ namespace FerreTodoElArabito.Web.Controllers
         }
 
         [HttpGet]
-        [Route("/Listar")]
+        [Route("/Inventario")]
+        public IActionResult Inventario()
+        {
+
+            return View();
+        }
+
+        [HttpGet]
+        [Route("/ObtenerInventario")]
         public IActionResult Listar()
         {
             return View();

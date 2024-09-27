@@ -1,0 +1,30 @@
+﻿@model FT.Lib.Data.Models.Filtro.FiltroInventario
+<div class="card-body">
+    @using (Html.BeginForm("Obtener", "Inventario", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(t => t.Nombre, "Nombre", new { @class = "text-label" })
+            <div class="input-group input-group-merge">
+                @Html.TextBoxFor(t => t.Nombre, new { @class = "form-control form-control-prepended"@*, placeholder = "john@doe.com"*@ })
+                @Html.ValidationMessageFor(t => t.Nombre)
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* <div class="form-group">
+            @Html.LabelFor(t => t.Input.Password, "Tipo:", new { @class = "text-label" })
+            <div class="input-group input-group-merge">
+                @Html.TextBoxFor(t => t.Input.Password, new { @class = "form-control form-control-prepended", type = "password" })
+                @Html.ValidationMessageFor(t => t.Input.Password)
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <span class="fa fa-key"></span>
+                    </div>
+                </div>
+            </div>
+        </div> *@
+    }
+</div>
