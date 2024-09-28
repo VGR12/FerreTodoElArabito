@@ -1,12 +1,14 @@
-﻿@* <!DOCTYPE html> *@
-@* <html> *@
+﻿@{
+    var filtro = ViewBag.Filtro as FT.Lib.Data.Models.Filtro.FiltroInventario;
+    string otro = "";
+}
+
 <body>
     <div class="card">
         <div class="card-header">
             <h4>Buscar Producto</h4>
         </div>
-        
-    </div>
+        @await Html.PartialAsync("_FiltroInventario",filtro);
     </div>
 </body>
 @* </html> *@

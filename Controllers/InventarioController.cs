@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FT.Lib.Data.Models.Filtro;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FerreTodoElArabito.Web.Controllers
 {
@@ -15,7 +16,7 @@ namespace FerreTodoElArabito.Web.Controllers
         [Route("/Inventario")]
         public IActionResult Inventario()
         {
-
+            ViewBag.Filtro = new FiltroInventario();
             return View();
         }
 
