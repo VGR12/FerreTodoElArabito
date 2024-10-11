@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FerreTodoElArabito.Web", "FerreTodoElArabito.Web.csproj", "{DC7FFB52-A8AB-42E2-9AC4-0AECA4EC3B86}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{2FB367C6-135A-4571-A017-2F1696F2F1E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FT.Lib.Data", "..\FT.Lib.Data\FT.Lib.Data.csproj", "{ABE4606A-D305-48BD-9FAD-4F1564784EB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FT.Lib.Data", "Lib\FT.Lib.Data\FT.Lib.Data.csproj", "{91086B83-1D6D-4086-AAFC-71097A154BA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{46DFA655-B167-4C40-944C-AB5771EEF102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerreTodoElArabito.Web", "Web\FerreTodoElArabito.Web\FerreTodoElArabito.Web.csproj", "{295E2756-B2CD-411B-989B-0630C614EEF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +17,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC7FFB52-A8AB-42E2-9AC4-0AECA4EC3B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC7FFB52-A8AB-42E2-9AC4-0AECA4EC3B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC7FFB52-A8AB-42E2-9AC4-0AECA4EC3B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC7FFB52-A8AB-42E2-9AC4-0AECA4EC3B86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABE4606A-D305-48BD-9FAD-4F1564784EB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABE4606A-D305-48BD-9FAD-4F1564784EB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABE4606A-D305-48BD-9FAD-4F1564784EB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABE4606A-D305-48BD-9FAD-4F1564784EB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91086B83-1D6D-4086-AAFC-71097A154BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91086B83-1D6D-4086-AAFC-71097A154BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91086B83-1D6D-4086-AAFC-71097A154BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91086B83-1D6D-4086-AAFC-71097A154BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295E2756-B2CD-411B-989B-0630C614EEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295E2756-B2CD-411B-989B-0630C614EEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295E2756-B2CD-411B-989B-0630C614EEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295E2756-B2CD-411B-989B-0630C614EEF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{ABE4606A-D305-48BD-9FAD-4F1564784EB7} = {2FB367C6-135A-4571-A017-2F1696F2F1E0}
+		{91086B83-1D6D-4086-AAFC-71097A154BA1} = {2FB367C6-135A-4571-A017-2F1696F2F1E0}
+		{295E2756-B2CD-411B-989B-0630C614EEF0} = {46DFA655-B167-4C40-944C-AB5771EEF102}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A48CBAE-9FB6-40E9-A618-F0C7DDBD792B}
