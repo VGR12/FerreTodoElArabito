@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{46DFA655-B16
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FerreTodoElArabito.Web", "Web\FerreTodoElArabito.Web\FerreTodoElArabito.Web.csproj", "{295E2756-B2CD-411B-989B-0630C614EEF0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{AAD0A80E-B307-4A90-AB99-B226FB8AF0F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FT.Test.Victor", "Test\FT.Test.Victor\FT.Test.Victor.csproj", "{71CFD348-AD53-450A-8134-AC1F93DD4649}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{295E2756-B2CD-411B-989B-0630C614EEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{295E2756-B2CD-411B-989B-0630C614EEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{295E2756-B2CD-411B-989B-0630C614EEF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71CFD348-AD53-450A-8134-AC1F93DD4649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71CFD348-AD53-450A-8134-AC1F93DD4649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71CFD348-AD53-450A-8134-AC1F93DD4649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71CFD348-AD53-450A-8134-AC1F93DD4649}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{91086B83-1D6D-4086-AAFC-71097A154BA1} = {2FB367C6-135A-4571-A017-2F1696F2F1E0}
 		{295E2756-B2CD-411B-989B-0630C614EEF0} = {46DFA655-B167-4C40-944C-AB5771EEF102}
+		{71CFD348-AD53-450A-8134-AC1F93DD4649} = {AAD0A80E-B307-4A90-AB99-B226FB8AF0F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3A48CBAE-9FB6-40E9-A618-F0C7DDBD792B}
