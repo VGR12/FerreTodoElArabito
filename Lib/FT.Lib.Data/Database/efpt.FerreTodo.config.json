@@ -23,6 +23,22 @@
          "ObjectType": 0
       },
       {
+         "Name": "[CTG].[Ubicacion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Producto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductoIngreso]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductoIngresoDetalle]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Usuario]",
          "ObjectType": 0
       }

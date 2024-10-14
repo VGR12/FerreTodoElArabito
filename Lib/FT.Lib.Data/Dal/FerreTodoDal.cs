@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FT.Lib.Data.Models.Inventario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,13 @@ namespace FT.Lib.Data.Dal
 {
     public class FerreTodoDal : IDisposable
     {
-        private Database.FerreTodosContext dbContext;
 
         public FerreTodoDal()
         {
-            
+
         }
+
+        private Database.FerreTodosContext dbContext;
 
         public Database.FerreTodosContext Dbcontext
         {
@@ -27,7 +29,12 @@ namespace FT.Lib.Data.Dal
 
         //Agregar metodos *****************************
 
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerInventario()
+        {
+            
 
+            return null;
+        }
 
         //*********************************************
         #region dispose 
@@ -47,7 +54,7 @@ namespace FT.Lib.Data.Dal
             {
                 if (disposing)
                 {
-                    dbContext.Dispose();    
+                    Dbcontext.Dispose();
                 }
 
                 disposedValue = true;

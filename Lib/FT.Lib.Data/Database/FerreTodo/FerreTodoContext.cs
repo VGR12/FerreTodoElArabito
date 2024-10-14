@@ -17,19 +17,75 @@ public partial class FerreTodoContext : DbContext
     {
     }
 
+    public virtual DbSet<Producto> Producto { get; set; }
+
+    public virtual DbSet<ProductoIngreso> ProductoIngreso { get; set; }
+
+    public virtual DbSet<ProductoIngresoDetalle> ProductoIngresoDetalle { get; set; }
+
     public virtual DbSet<TipoIdentificacion> TipoIdentificacion { get; set; }
 
     public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
+
+    public virtual DbSet<Ubicacion> Ubicacion { get; set; }
 
     public virtual DbSet<Usuario> Usuario { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=205.209.114.122;Initial Catalog=FerreTodoElArabito;Persist Security Info=True;User ID=ElArabito;Password=?c5ta083L123$;Encrypt=True");
+        => optionsBuilder.UseSqlServer("Data Source=205.209.114.122;User ID=ElArabito;Password=?c5ta083L123$");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("ElArabito");
+
+        modelBuilder.Entity<Producto>(entity =>
+        {
+            entity.ToTable("Producto", "dbo");
+
+            entity.Property(e => e.Codigo)
+                .IsRequired()
+                .HasMaxLength(50);
+            entity.Property(e => e.Descripcion)
+                .IsRequired()
+                .HasMaxLength(250);
+            entity.Property(e => e.FechaIngreso).HasColumnType("datetime");
+            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Marca).HasMaxLength(50);
+            entity.Property(e => e.Modelo).HasMaxLength(30);
+            entity.Property(e => e.Serie).HasMaxLength(30);
+
+            entity.HasOne(d => d.Ubicacion).WithMany(p => p.Producto)
+                .HasForeignKey(d => d.UbicacionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Producto_Ubicacion");
+        });
+
+        modelBuilder.Entity<ProductoIngreso>(entity =>
+        {
+            entity.ToTable("ProductoIngreso", "dbo");
+
+            entity.Property(e => e.Costo).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.Descripcion)
+                .IsRequired()
+                .HasMaxLength(50);
+            entity.Property(e => e.FechaIn).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<ProductoIngresoDetalle>(entity =>
+        {
+            entity.ToTable("ProductoIngresoDetalle", "dbo");
+
+            entity.Property(e => e.FacturaIngreso)
+                .IsRequired()
+                .HasMaxLength(50);
+            entity.Property(e => e.Impuesto).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.Plazo).HasMaxLength(25);
+            entity.Property(e => e.PrecioTotal).HasColumnType("decimal(18, 0)");
+            entity.Property(e => e.Proveedor)
+                .IsRequired()
+                .HasMaxLength(50);
+        });
 
         modelBuilder.Entity<TipoIdentificacion>(entity =>
         {
@@ -47,6 +103,15 @@ public partial class FerreTodoContext : DbContext
             entity.Property(e => e.Descripcion)
                 .IsRequired()
                 .HasMaxLength(25);
+        });
+
+        modelBuilder.Entity<Ubicacion>(entity =>
+        {
+            entity.ToTable("Ubicacion", "CTG", tb => tb.HasComment(""));
+
+            entity.Property(e => e.Descripcion)
+                .IsRequired()
+                .HasMaxLength(20);
         });
 
         modelBuilder.Entity<Usuario>(entity =>

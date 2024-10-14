@@ -1,4 +1,29 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+$("body").on("click", "[data-enviogenerico]", function () {
 
-// Write your JavaScript code.
+    var formulario = $(this).closest("form");
+    var ruta = formulario.attr("action");
+    var datosFormulario = {};
+
+    formulario.find("input").each(function () {
+        var nombre = $(this).attr("name");
+        var valor = $(this).val();
+        datosFormulario[nombre] = valor;
+    });
+
+    console.log(datosFormulario);
+
+    $.ajax({
+        url: ruta,
+        type: 'POST',
+        data: datosFormulario,
+        success: function (response) {
+            console.log("Respuesta del servidor:", response);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("Error en la petición:", textStatus, errorThrown);
+        }
+    });
+
+
+});
