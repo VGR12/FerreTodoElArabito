@@ -29,7 +29,7 @@ namespace FerreTodoElArabito.Web.Controllers
         }
 
         [HttpPost]
-        [Route("/Inventario/ObtenerInventario")]
+        [Route("/Inventario/Obtener")]
         public IActionResult Listar([FromBody] FiltroInventario data)
         {
             return View();
