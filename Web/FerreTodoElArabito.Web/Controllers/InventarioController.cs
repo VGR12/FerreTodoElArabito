@@ -28,9 +28,9 @@ namespace FerreTodoElArabito.Web.Controllers
             return View(model);
         }
 
-        [HttpGet]
-        [Route("/ObtenerInventario")]
-        public IActionResult Listar()
+        [HttpPost]
+        [Route("/Inventario/ObtenerInventario")]
+        public IActionResult Listar([FromBody] FiltroInventario data)
         {
             return View();
         }
