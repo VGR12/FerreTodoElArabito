@@ -32,7 +32,11 @@ namespace FerreTodoElArabito.Web.Controllers
         [Route("/Inventario/Obtener")]
         public IActionResult Listar([FromBody] FiltroInventario data)
         {
-            return View();
+            using var instancia = new FerreTodoDal();
+            ViewBag.Filtro = new FiltroInventario();
+            //var resultado
+
+            return Json( new {Mensaje="EL MENSAJE ES EXITOSO", Status="OK"});
         }
     }
 }
