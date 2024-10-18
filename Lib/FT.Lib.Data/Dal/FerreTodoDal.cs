@@ -1,4 +1,6 @@
-﻿using FT.Lib.Data.Models.Inventario;
+﻿using FT.Lib.Data.Database.FerreTodo;
+using FT.Lib.Data.Models.Filtro;
+using FT.Lib.Data.Models.Inventario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +29,39 @@ namespace FT.Lib.Data.Dal
             set => dbContext = value;
         }
 
-        //Agregar metodos *****************************
-
-        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerInventario()
+        public async Task<string> ObtenerProducto(Guid? token)
         {
-            
+
+            return null;
+        }
+
+        public async Task<IQueryable<Producto>> FiltrarProducto(FiltroInventario? filtro)
+        {
+            var retorno = Dbcontext.Producto.Where(t => t.Estado);
+
+            if (!string.IsNullOrEmpty(filtro.Nombre))
+            {
+                //retorno= retorno.Where(t=>t.)
+            }
+            else if (!string.IsNullOrEmpty(filtro.Codigo))
+            {
+                retorno = retorno.Where(t => t.Codigo.Contains(filtro.Codigo));
+            }
+            //else if ()
+            //{
+
+            //}
+
+            return retorno;
+        }
+
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerInventario(FiltroInventario? filtro)
+        {
+            var resultados = await FiltrarProducto(filtro);
+
+
+
+
 
             return null;
         }

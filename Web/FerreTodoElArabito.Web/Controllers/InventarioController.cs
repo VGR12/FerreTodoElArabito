@@ -8,12 +8,14 @@ namespace FerreTodoElArabito.Web.Controllers
     public class InventarioController : Controller
     {
         [HttpGet]
-        [Route("/Agregar")]
-        public async Task<IActionResult> Agregar(Guid? token)
+        [Route("/Inventario/Agregar")]
+        public async Task<IActionResult> AgregarProducto(Guid? token)
         {
             if (token.HasValue)
             {
 
+
+                return PartialView();
             }
             return View();
         }
@@ -24,19 +26,19 @@ namespace FerreTodoElArabito.Web.Controllers
         {
             using var instance = new FerreTodoDal();
             ViewBag.Filtro = new FiltroInventario();
-            var model = await instance.ObtenerInventario();
-            return View(model);
+            var model = await instance.ObtenerInventario(new FiltroInventario());
+            return View();
         }
 
         [HttpPost]
         [Route("/Inventario/Obtener")]
-        public IActionResult Listar([FromBody] FiltroInventario data)
+        public async Task<IActionResult> Listar([FromBody] FiltroInventario data)
         {
             using var instancia = new FerreTodoDal();
             ViewBag.Filtro = new FiltroInventario();
             //var resultado
 
-            return Json( new {Mensaje="EL MENSAJE ES EXITOSO", Status="OK"});
+            return Json(new { Mensaje = "EL MENSAJE ES EXITOSO", Status = "OK" });
         }
     }
 }

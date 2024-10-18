@@ -31,6 +31,8 @@ $("body").on("click", "[data-enviogenerico]", function (e) {
                     if (response.data.lenght > 0) {
 
                         $.each(response.data, function (index, value) {
+
+
                             console.log('Índice: ' + index + ', Valor: ' + value);
                         });
 
