@@ -47,6 +47,18 @@ namespace FT.Lib.Data.Dal
 
             return null;
         }
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerClientes()
+        {
+
+
+            return null;
+        }
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerProveedores()
+        {
+
+
+            return null;
+        }
 
         //*********************************************
         #region dispose 
