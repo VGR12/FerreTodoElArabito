@@ -1,0 +1,40 @@
+﻿@using FT.Lib.Data.Models.CuentasPorCobrar
+@model PagedList.PagedList<ElementoInvModel>
+
+<div class="card">
+    <div class="card-header"><h3><strong>Resultados</strong></h3></div>
+    <div class="card-body">
+        @* <div class="table col-12"> *@
+        <table class="table col-12">
+            <thead>
+                <tr>
+                    <th>Número de documento</th>
+                    <th>Fecha de emisión </th>
+                    <th>Monto del documento</th>
+                    <th>Emisor de la factura</th>
+                    <th>Receptor de la factura</th>
+                    <th>Tipo de documento</th>
+                </tr>
+            </thead>
+            <tbody data-resultados>
+                <tr>
+                    <td>1177508487</td>
+                    <td>22/03/24</td>
+                    <td>100.000</td>
+                    <td>Ferreteria por mayor</td>
+                    <td>Ferretodo el Arabito</td>
+                    <td>Recibo</td>
+                </tr>
+                <tr>
+                    <td>1177508487</td>
+                    <td>22/03/24</td>
+                    <td>100.000</td>
+                    <td>Ferreteria por mayor</td>
+                    <td>Ferretodo el Arabito</td>
+                    <td>Recibo</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

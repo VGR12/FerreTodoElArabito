@@ -1,0 +1,35 @@
+﻿@model FT.Lib.Data.Models.Filtro.FiltroCuentasPorPagar
+<div class="card-body" style="margin-top:10px;">
+    @using (Html.BeginForm("Obtener", "CuentasPorPagar", FormMethod.Post))
+    {
+        <div class="col-12" style="margin-top:10px;">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        @Html.LabelFor(t => t.Nombre, new { @class = "text-label" })
+                        <div class="input-group input-group-merge">
+                            @Html.TextBoxFor(t => t.Nombre, new { @class = "form-control form-control-prepended" })
+                            @Html.ValidationMessageFor(t => t.Nombre)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        @Html.LabelFor(t => t.Tipo, new { @class = "text-label" })
+                        <div class="input-group input-group-merge">
+                            @Html.TextBoxFor(t => t.Tipo, new { @class = "form-control form-control-prepended" })
+                            @Html.ValidationMessageFor(t => t.Tipo)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top:15px;text-align: right;">
+                    <button type="submit" data-enviogenerico class="btn btn-primary">Buscar Productos</button>
+                </div>
+            </div>
+        </div>
+    }
+
+@*     <div class="col-12" style="margin-top:15px;text-align: right;">
+        <button type="submit" data-enviogenerico class="btn btn-primary">Buscar Productos</button>
+    </div> *@
+</div>

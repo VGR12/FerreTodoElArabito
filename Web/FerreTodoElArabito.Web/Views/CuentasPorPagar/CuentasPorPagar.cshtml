@@ -1,0 +1,17 @@
+﻿@using FT.Lib.Data.Models.CuentasPorPagar
+@model PagedList.PagedList<ElementoInvModel>
+@{
+    var filtro = ViewBag.Filtro as FT.Lib.Data.Models.Filtro.FiltroCuentasPorPagar;
+}
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h3><strong>Buscar Producto</strong></h3>
+        </div>
+        @await Html.PartialAsync("_FiltroCuentasPorPagar",filtro)
+    </div>
+
+    @await Html.PartialAsync("_Listar",Model)
+</body>
+@* </html> *@

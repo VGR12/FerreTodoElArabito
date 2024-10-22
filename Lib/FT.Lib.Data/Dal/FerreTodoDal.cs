@@ -35,6 +35,18 @@ namespace FT.Lib.Data.Dal
 
             return null;
         }
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerCuentasPorCobrar()
+        {
+
+
+            return null;
+        }
+        public async Task<PagedList.PagedList<ElementoInvModel>> ObtenerCuentasPorPagar()
+        {
+
+
+            return null;
+        }
 
         //*********************************************
         #region dispose 
