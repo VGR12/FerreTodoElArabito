@@ -1,0 +1,16 @@
+﻿@using FT.Lib.Data.Models.Inventario
+@model PagedList.PagedList<ElementoInvModel>
+@{
+    var filtro = ViewBag.Filtro as FT.Lib.Data.Models.Filtro.FiltroUsuario;
+}
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h3><strong>Buscar Usuario</strong></h3>
+        </div>
+        @await Html.PartialAsync("_FiltroUsuario", filtro)
+    </div>
+
+    @await Html.PartialAsync("_Listar")
+</body>

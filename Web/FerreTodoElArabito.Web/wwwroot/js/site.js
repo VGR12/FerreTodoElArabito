@@ -1,5 +1,5 @@
 ﻿
-$("body").on("click", "[data-enviogenerico]", function (e) {
+$("body").on("click", "[data-busquedagenerico]", function (e) {
     e.preventDefault();
     var formulario = $(this).closest("form");
     var ruta = formulario.attr("action");

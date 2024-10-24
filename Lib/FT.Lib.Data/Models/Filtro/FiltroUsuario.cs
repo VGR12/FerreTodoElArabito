@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace FT.Lib.Data.Models.Filtro
 {
-    public class FiltroInventario : FiltroBase
+    public class FiltroUsuario
     {
         public string Nombre { get; set; }
-        public string Codigo { get; set; }
-        public int Sede { get; set; }
-        public bool Disponibilidad { get; set; }
+        public string Identificacion { get; set; }  
     }
 }
