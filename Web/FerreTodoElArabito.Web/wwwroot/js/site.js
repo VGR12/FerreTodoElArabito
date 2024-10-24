@@ -26,17 +26,20 @@ $("body").on("click", "[data-enviogenerico]", function (e) {
         success: function (response) {
 
             if (response.status === "OK") {
+
                 tbody.html('');
+
+
                 if (response.data != undefined) {
                     if (response.data.lenght > 0) {
 
-                        $.each(response.data, function (index, value) {
+                        location.href = response.data.url;
+
+                        //$.each(response.data, function (index, value) {
 
 
-                            console.log('Índice: ' + index + ', Valor: ' + value);
-                        });
-
-
+                        //    console.log('Índice: ' + index + ', Valor: ' + value);
+                        //});
 
                     } else {
                         var subtitulos = $('th').length;

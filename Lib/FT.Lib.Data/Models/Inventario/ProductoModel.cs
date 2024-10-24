@@ -13,7 +13,8 @@ namespace FT.Lib.Data.Models.Inventario
         public string Descripcion { get; set; }
         public string Marca { get; set; }
         public string Serie { get; set; }
-        public int UbicacionDisponible { get; set; }
+        public int UbicacionDisponibleId { get; set; }
+        public string UbicacionDisponible { get; set; }
         public string TipoVentaId { get; set; }
         public string Modelo { get; set; }
         public int Cantidad { get; set; }

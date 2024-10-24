@@ -11,12 +11,15 @@ namespace FerreTodoElArabito.Web.Controllers
         [Route("/Inventario/Agregar")]
         public async Task<IActionResult> AgregarProducto(Guid? token)
         {
+            using var instancia = new FerreTodoDal();
             if (token.HasValue)
             {
-
-
-                return PartialView();
+                var model = await instancia.ObtenerProducto(token.Value);
+                ViewBag.EsAgregar = false;
+                return PartialView(model);
             }
+
+            ViewBag.EsAgregar = true;
             return View();
         }
 

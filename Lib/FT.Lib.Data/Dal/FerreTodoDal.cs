@@ -1,6 +1,7 @@
 ﻿using FT.Lib.Data.Database.FerreTodo;
 using FT.Lib.Data.Models.Filtro;
 using FT.Lib.Data.Models.Inventario;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,10 +30,20 @@ namespace FT.Lib.Data.Dal
             set => dbContext = value;
         }
 
-        public async Task<string> ObtenerProducto(Guid? token)
+        public async Task<ProductoModel> ObtenerProducto(Guid token)
         {
+            var elemento = await Dbcontext.Producto.Where(t => t.Guid == token)
+                .Select(t =>
+                new ProductoModel
+                {
+                    UbicacionDisponible = t.Ubicacion.Descripcion,
+                    UbicacionDisponibleId = t.UbicacionId,
+                    Codigo = t.Codigo,
+                    Nombre = t.Descripcion,
+                    Cantidad = t.CantidadDisponible
+                }).FirstOrDefaultAsync();
 
-            return null;
+            return elemento;
         }
 
         public async Task<IQueryable<Producto>> FiltrarProducto(FiltroInventario? filtro)

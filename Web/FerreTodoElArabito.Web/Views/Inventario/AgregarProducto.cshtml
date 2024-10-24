@@ -1,11 +1,86 @@
 ﻿@model FT.Lib.Data.Models.Inventario.ProductoModel
 
+@{
+    bool? esAgregar = ViewBag.EsAgregar as bool?;
+}
 
 <div class="card">
     <div class="card-header">
-        <h3><strong>Prueba</strong></h3>
+        <h3><strong>@(esAgregar == true ? "Agregar Producto" : "Modificar Producto")</strong></h3>
     </div>
     <div class="card-body">
-        <p>Aqui hay texto</p>
+        @using (Html.BeginForm("Obtener", "Inventario", FormMethod.Post))
+        {
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Nombre, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.Nombre, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Nombre)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Codigo, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.Codigo, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Codigo)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Descripcion, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextAreaFor(t => t.Descripcion, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Descripcion)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Cantidad, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.Cantidad, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Cantidad)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Modelo, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.Modelo, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Modelo)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.TipoVentaId, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.TipoVentaId, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.TipoVentaId)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2 mb-2">
+                        <div class="form-group">
+                            @Html.LabelFor(t => t.Serie, new { @class = "text-label" })
+                            <div class="input-group input-group-merge">
+                                @Html.TextBoxFor(t => t.Serie, new { @class = "form-control form-control-prepended" })
+                                @Html.ValidationMessageFor(t => t.Serie)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" style="margin-top:15px;text-align: right;">
+                        <button type="submit" data-enviogenerico class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
